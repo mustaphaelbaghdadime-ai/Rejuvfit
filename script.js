@@ -20,12 +20,15 @@ document.querySelectorAll('.add-to-cart').forEach(btn => {
   });
 });
 
-document.getElementById('cart-btn').addEventListener('click', () => {
-  cartPopup.classList.toggle('hidden');
+const cartBtn = document.getElementById('cart-btn');
+const closeCartBtn = document.getElementById('close-cart');
+
+cartBtn.addEventListener('click', () => {
+  cartPopup.classList.toggle('show'); // toggle visibility
 });
 
-document.getElementById('close-cart').addEventListener('click', () => {
-  cartPopup.classList.add('hidden');
+closeCartBtn.addEventListener('click', () => {
+  cartPopup.classList.remove('show'); // close when clicking Close button
 });
 
 function updateCartDisplay() {
@@ -44,14 +47,3 @@ function updateCartDisplay() {
   cartCount.textContent = count;
   cartTotal.textContent = `Total: $${total}`;
 }
-
-const cartBtn = document.getElementById('cart-btn');
-const closeCartBtn = document.getElementById('close-cart');
-
-cartBtn.addEventListener('click', () => {
-  cartPopup.classList.toggle('show'); // toggle the show class
-});
-
-closeCartBtn.addEventListener('click', () => {
-  cartPopup.classList.remove('show');
-});

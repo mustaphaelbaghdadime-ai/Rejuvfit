@@ -13,7 +13,21 @@
       <img src="rejuvfit_logo.png" width="120" height="100" alt="RejuvFit logo">
       <h1>Welcome to RejuvFit!</h1>
       <p>Your online store for fitness and rejuvenation products.</p>
-      <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+
+      <!-- CART BUTTON & POPUP -->
+      <div style="position: relative; display: inline-block;">
+        <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+        <div id="cart-popup" class="cart-popup hidden">
+          <div class="cart-content">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: $0</p>
+            <button id="close-cart">Close</button>
+          </div>
+        </div>
+      </div>
+      <!-- END CART BUTTON & POPUP -->
+
     </div>
   </header>
 
@@ -37,17 +51,6 @@
       </div>
     </div>
   </main>
-
-  <!-- Cart Popup -->
-  <div id="cart-popup" class="cart-popup hidden">
-  <div class="cart-content">
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <p id="cart-total">Total: $0</p>
-    <button id="close-cart">Close</button>
-  </div>
-</div>
-
 
   <script src="script.js"></script>
 </body>

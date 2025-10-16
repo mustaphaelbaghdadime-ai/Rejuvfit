@@ -43,36 +43,9 @@ button:hover {
 }
 
 /* Cart Popup */
-#cart-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cart-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-}
-
-.hidden {
-  display: none;
-}
-/* Position the cart popup relative to the cart button */
-#cart-btn {
-  position: relative; /* make the button a reference point */
-}
-
 .cart-popup {
   position: absolute;
-  top: 50px; /* distance below the cart button */
+  top: 40px; /* below the cart button */
   right: 0;
   width: 300px;
   background: white;
@@ -80,17 +53,18 @@ button:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 15px;
   z-index: 1000;
-  transform: translateY(-20px);
   opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
   transition: all 0.3s ease;
 }
 
 .cart-popup.show {
-  transform: translateY(0);
   opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-/* Ensure cart-content looks nice inside the popup */
 .cart-content {
   display: flex;
   flex-direction: column;
