@@ -1,16 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-      <title>RejuvFit</title>
-      <link rel = "stylesheet" href = "style.css">
-      <link rel="icon" type="image/png" href="/rejuvfit_logo.png"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RejuvFit</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="rejuvfit_logo.png">
 </head>
 <body>
-      <div style="display: flex; align-items: center;">
-            <img src = "rejuvfit_logo.png" width="250" height="200">
-            <h1>  Welcome to RejuvFit!</h1>
-            <p>  Your online store for fitness and rejuvenation products.</p>
-      </div>
+  <header>
+    <div class="logo-title">
+      <img src="rejuvfit_logo.png" alt="RejuvFit Logo" width="120">
+      <h1>RejuvFit</h1>
+    </div>
+    <nav>
+      <a href="#products">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to RejuvFit!</h2>
+    <p>Your online store for fitness and rejuvenation products.</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </section>
+
+  <main id="products" class="product-grid">
+    <!-- Example products -->
+    <div class="product">
+      <img src="yoga_mat.jpg" alt="Yoga Mat">
+      <h3>Premium Yoga Mat</h3>
+      <p>$29.99</p>
+      <button class="add-to-cart" data-name="Yoga Mat" data-price="29.99">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="protein_shake.jpg" alt="Protein Shake">
+      <h3>Protein Shake Mix</h3>
+      <p>$19.99</p>
+      <button class="add-to-cart" data-name="Protein Shake" data-price="19.99">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="massage_gun.jpg" alt="Massage Gun">
+      <h3>Deep Tissue Massage Gun</h3>
+      <p>$89.99</p>
+      <button class="add-to-cart" data-name="Massage Gun" data-price="89.99">Add to Cart</button>
+    </div>
+  </main>
+
+  <section id="about" class="about">
+    <h2>About RejuvFit</h2>
+    <p>At RejuvFit, we believe in balancing strength and recovery. Our mission is to bring you quality fitness and wellness products that help you perform and feel your best.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 RejuvFit. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
