@@ -65,3 +65,34 @@ button:hover {
 .hidden {
   display: none;
 }
+/* Position the cart popup relative to the cart button */
+#cart-btn {
+  position: relative; /* make the button a reference point */
+}
+
+.cart-popup {
+  position: absolute;
+  top: 50px; /* distance below the cart button */
+  right: 0;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  z-index: 1000;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.cart-popup.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Ensure cart-content looks nice inside the popup */
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
