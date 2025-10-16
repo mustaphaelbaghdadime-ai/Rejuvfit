@@ -1,17 +1,46 @@
-let cartCount = 0;
-const cartCountEl = document.getElementById("cart-count");
-const buttons = document.querySelectorAll(".add-to-cart");
+const cart = [];
+const cartCount = document.getElementById('cart-count');
+const cartPopup = document.getElementById('cart-popup');
+const cartItems = document.getElementById('cart-items');
+const cartTotal = document.getElementById('cart-total');
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    cartCount++;
-    cartCountEl.textContent = cartCount;
-    alert(`${btn.dataset.name} added to cart!`);
+document.querySelectorAll('.add-to-cart').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const name = btn.dataset.name;
+    const price = parseFloat(btn.dataset.price);
+
+    // Check if item already in cart
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+    updateCartDisplay();
   });
 });
 
-document.getElementById("contact-form").addEventListener("submit", e => {
-  e.preventDefault();
-  alert("Thanks for reaching out! We’ll get back to you soon.");
-  e.target.reset();
+document.getElementById('cart-btn').addEventListener('click', () => {
+  cartPopup.classList.toggle('hidden');
 });
+
+document.getElementById('close-cart').addEventListener('click', () => {
+  cartPopup.classList.add('hidden');
+});
+
+function updateCartDisplay() {
+  cartItems.innerHTML = '';
+  let total = 0;
+  let count = 0;
+
+  cart.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.name} x${item.qty} — $${item.price * item.qty}`;
+    cartItems.appendChild(li);
+    total += item.price * item.qty;
+    count += item.qty;
+  });
+
+  cartCount.textContent = count;
+  cartTotal.textContent = `Total: $${total}`;
+}
