@@ -7,13 +7,13 @@ body {
 }
 
 .header-content {
-  background: #e0ffe0;
+  background: #ccbc2e;
   padding: 20px;
   border-bottom: 2px solid #ccc;
 }
 
 button {
-  background: #2ecc71;
+  background: #ccbc2e;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -23,7 +23,7 @@ button {
 }
 
 button:hover {
-  background: #27ae60;
+  background: #ccbc2e;
 }
 
 .product-list {
